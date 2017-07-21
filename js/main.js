@@ -24,8 +24,9 @@ $(".cercle").click(function() {
  // timer = null
 // });
 
-// compteur gauche
+// compteur gauche break
 
+// bouton moins
 $(".moinsgauche").click(function(){
   var resgauche = $(".resgauche").text();
   resgauche = parseInt(resgauche) -1
@@ -36,6 +37,7 @@ $(".moinsgauche").click(function(){
   value = $(".resgauche").text()*60
 });
 
+// bouton plus
 $(".plusgauche").click(function(){
   var resgauche = $(".resgauche").text();
   resgauche = parseInt(resgauche) +1
@@ -43,8 +45,9 @@ $(".plusgauche").click(function(){
   value = $(".resgauche").text()*60
 });
 
-// compteur droit
+// compteur droit session
 
+// bouton moins
 $(".moinsdroite").click(function(){
   var resdroite = $(".resdroite").text();
   resdroite = parseInt(resdroite) -1
@@ -58,6 +61,7 @@ $(".moinsdroite").click(function(){
   timer = null
 });
 
+// bouton plus
 $(".plusdroite").click(function(){
   var resdroite = $(".resdroite").text();
   resdroite = parseInt(resdroite) +1
@@ -68,6 +72,7 @@ $(".plusdroite").click(function(){
   timer = null
 });
 
+// fonction compteur
 function sec(d) {
    d = Number(d);
    var m = Math.floor(d % 3600 / 60);
