@@ -99,7 +99,7 @@ textarea {
   border-radius: 50%;
   height: 400px;
   width: 400px;
-  border: 2px solid black;
+  border: 3px solid white;
   margin: 50px auto;
   text-align: center;
   line-height: 400px;
@@ -118,6 +118,26 @@ button {
 
 h1 {
   text-align: center;
+}
+
+body {
+  background-color: black;
+  color:white;
+}
+
+.a {
+  color: black;
+}
+
+.blue {
+  color: blue;
+  font-size: 50px;
+
+}
+
+.red {
+  color: red;
+  font-size: 50px;
 }
 
 

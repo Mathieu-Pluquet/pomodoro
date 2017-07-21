@@ -2,12 +2,12 @@
 var timer = null
 var bonjour =1
 var value = $(".resdroite").text()*60
-$(".cercle").text(sec(value));
+$(".cercle").text(sec(value)).addClass("blue");
 $(".cercle").click(function() {
  if (timer !== null) return;
  timer = setInterval(function () {
      value = value-1;
-     $(".cercle").text(sec(value));
+     $(".cercle").text(sec(value))
      if (value == 0 && bonjour==1) {
        value = $(".resgauche").text()*60
        bonjour=2
@@ -16,7 +16,13 @@ $(".cercle").click(function() {
       value = $(".resdroite").text()*60
       bonjour=1
      }
- }, 1000);
+     if (bonjour==1){
+        $(".cercle").text(sec(value)).css("color","blue");
+     }
+    if (bonjour==2){
+       $(".cercle").text(sec(value)).css("color","red");
+     }
+ }, 100);
 });
 
 // $("#cercle2").click(function() {
@@ -83,5 +89,5 @@ function sec(d) {
    if(s<10){
      s = "0" + s
    }
-   return m + ":" + s
+   return  m + ":" + s
 }
