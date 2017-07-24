@@ -22,12 +22,39 @@ $(".cercle").click(function() {
     if (bonjour==2){
        $(".cercle").text(sec(value)).css("color","red");
      }
- }, 100);
+ }, 10);
 });
 
+// bouton stop
+$(".bbb").click(function () {
+   clearTimeout(timer);
+   timer = null
+   $(".cercle").click(function () {
+     if (timer !== null) return;
+   timer = setInterval(function () {
+       value = value-1;
+       $(".cercle").text(sec(value))
+       if (value == 0 && bonjour==1) {
+         value = $(".resgauche").text()*60
+         bonjour=2
+       }
+       if (value == 0 && bonjour==2) {
+        value = $(".resdroite").text()*60
+        bonjour=1
+       }
+       if (bonjour==1){
+          $(".cercle").text(sec(value)).css("color","blue");
+       }
+      if (bonjour==2){
+         $(".cercle").text(sec(value)).css("color","red");
+       }
+   }, 100);
+  });
+  });
+
 // $("#cercle2").click(function() {
- // clearInterval(timer);
- // timer = null
+//  clearInterval(timer);
+//  timer = null
 // });
 
 // compteur gauche break
