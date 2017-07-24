@@ -46,7 +46,10 @@ $(".moinsgauche").click(function(){
   if ($(".resgauche").text() <1) {
     $(".resgauche").text(1)
   }
-  value = $(".resgauche").text()*60
+  if (bonjour==2) {
+    value = $(".resgauche").text()*60
+      $(".cercle").text(sec(resgauche*60));
+  }
 });
 
 // bouton plus
@@ -54,7 +57,10 @@ $(".plusgauche").click(function(){
   var resgauche = $(".resgauche").text();
   resgauche = parseInt(resgauche) +1
   $(".resgauche").text(resgauche)
-  value = $(".resgauche").text()*60
+  if (bonjour==2) {
+    value = $(".resgauche").text()*60
+      $(".cercle").text(sec(resgauche*60));
+  }
 });
 
 // compteur droit session
@@ -67,8 +73,11 @@ $(".moinsdroite").click(function(){
   if ($(".resdroite").text() <1) {
     $(".resdroite").text(1)
   }
-  $(".cercle").text(sec(resdroite*60));
-  value = $(".resdroite").text()*60
+
+  if (bonjour==1) {
+    value = $(".resdroite").text()*60
+      $(".cercle").text(sec(resdroite*60));
+  }
   clearInterval(timer);
   timer = null
 });
@@ -78,8 +87,10 @@ $(".plusdroite").click(function(){
   var resdroite = $(".resdroite").text();
   resdroite = parseInt(resdroite) +1
   $(".resdroite").text(resdroite)
-  $(".cercle").text(sec(resdroite*60));
-  value = $(".resdroite").text()*60
+  if (bonjour==1) {
+    value = $(".resdroite").text()*60
+    $(".cercle").text(sec(resdroite*60));
+  }
   clearInterval(timer);
   timer = null
 });
