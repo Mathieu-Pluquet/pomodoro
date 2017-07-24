@@ -132,7 +132,10 @@ body {
 .blue {
   color: blue;
   font-size: 50px;
+}
 
+.b {
+  color: blue;
 }
 
 .red {
@@ -140,8 +143,24 @@ body {
   font-size: 50px;
 }
 
+.r {
+  color: red;
+}
+
 p {
   font-size: 20px;
+}
+
+@media (max-width: 640px){
+  .cercle {
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+  }
+
+  .blue, .red {
+    font-size: 35px;
+  }
 }
 
 
