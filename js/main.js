@@ -2,8 +2,11 @@
 var timer = null
 var bonjour =1
 var value = $(".resdroite").text()*60
+
+
 $(".cercle").text(sec(value)).addClass("blue");
 $(".cercle").click(function() {
+  if ($('#cercle2').hasClass('test')) {
  if (timer !== null) return;
  timer = setInterval(function () {
      value = value-1;
@@ -22,40 +25,16 @@ $(".cercle").click(function() {
     if (bonjour==2){
        $(".cercle").text(sec(value)).css("color","red");
      }
+     $('#cercle2').removeClass('test')
  }, 10);
+ }
+ else {
+      clearInterval(timer);
+      timer = null
+       $('#cercle2').addClass('test')
+    }
 });
 
-// bouton stop
-$(".bbb").click(function () {
-   clearTimeout(timer);
-   timer = null
-   $(".cercle").click(function () {
-     if (timer !== null) return;
-   timer = setInterval(function () {
-       value = value-1;
-       $(".cercle").text(sec(value))
-       if (value == 0 && bonjour==1) {
-         value = $(".resgauche").text()*60
-         bonjour=2
-       }
-       if (value == 0 && bonjour==2) {
-        value = $(".resdroite").text()*60
-        bonjour=1
-       }
-       if (bonjour==1){
-          $(".cercle").text(sec(value)).css("color","blue");
-       }
-      if (bonjour==2){
-         $(".cercle").text(sec(value)).css("color","red");
-       }
-   }, 100);
-  });
-  });
-
-// $("#cercle2").click(function() {
-//  clearInterval(timer);
-//  timer = null
-// });
 
 // compteur gauche break
 
