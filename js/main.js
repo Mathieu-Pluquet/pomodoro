@@ -28,7 +28,7 @@ $(".cercle").click(function() {
        $(".cercle").text(sec(value)).css("color","red");
      }
      $('#cercle2').removeClass('test')
- }, 10);
+ }, 1000);
  }
  // stopper le chrono
  else {
