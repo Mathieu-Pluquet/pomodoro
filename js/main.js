@@ -11,6 +11,7 @@ $(".cercle").click(function() {
  timer = setInterval(function () {
      value = value-1;
      $(".cercle").text(sec(value))
+    //  swap chrono gauche et droit
      if (value == 0 && bonjour==1) {
        value = $(".resgauche").text()*60
        bonjour=2
@@ -19,6 +20,7 @@ $(".cercle").click(function() {
       value = $(".resdroite").text()*60
       bonjour=1
      }
+    //  couleur chrono
      if (bonjour==1){
         $(".cercle").text(sec(value)).css("color","blue");
      }
@@ -28,6 +30,7 @@ $(".cercle").click(function() {
      $('#cercle2').removeClass('test')
  }, 10);
  }
+ // stopper le chrono
  else {
       clearInterval(timer);
       timer = null
